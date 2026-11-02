@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-primary: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e2e8f0;
-            --tag-bg: #eff6ff;
-            --tag-text: #1e40af;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: #334155;
+            --tag-bg: rgba(59, 130, 246, 0.1);
+            --tag-text: #60a5fa;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
             --transition: all 0.2s ease-in-out;
         }
 
@@ -32,24 +32,24 @@
             background-color: var(--bg-primary);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
         header {
             background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 20px;
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
 
         .profile-header {
@@ -61,23 +61,24 @@
         }
 
         .profile-info h1 {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
         }
 
         .profile-info p.title {
-            font-size: 1.15rem;
-            color: var(--accent);
+            font-size: 1.2rem;
+            color: var(--tag-text);
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .profile-info p.bio {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .contact-links {
@@ -90,9 +91,9 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
@@ -121,17 +122,17 @@
 
         section {
             background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 16px;
+            padding: 2.5rem;
+            border-radius: 20px;
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
             border: 1px solid var(--border);
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -144,42 +145,44 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
         .card {
-            background: var(--bg-primary);
+            background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: 1.8rem;
+            border-radius: 14px;
             transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow);
             border-color: var(--accent);
         }
 
         .card h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: var(--text-main);
         }
 
         .card .subtitle {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--tag-text);
             margin-bottom: 1rem;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .tags {
@@ -191,7 +194,7 @@
         .tag {
             background-color: var(--tag-bg);
             color: var(--tag-text);
-            padding: 0.25rem 0.75rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -201,18 +204,18 @@
             list-style-type: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         ul.list li {
             position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
+            padding-left: 1.8rem;
+            font-size: 1rem;
             color: var(--text-muted);
         }
 
         ul.list li::before {
-            content: "•";
+            content: "→";
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -223,9 +226,9 @@
 
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -233,10 +236,10 @@
                 padding: 1rem 0.5rem;
             }
             header, section {
-                padding: 1.5rem;
+                padding: 1.8rem;
             }
             .profile-info h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -249,24 +252,24 @@
             <div class="profile-header">
                 <div class="profile-info">
                     <h1>Vaibhav Sharma</h1>
-                    <p class="title">MBA Aspirant | Operations & Corporate Communications Professional</p>
-                    <p class="bio">Passionate business strategist with extensive internship experience across supply chain logistics, public relations, commercial operations, and market research.</p>
+                    <p class="title">MBA Aspirant | Operations, Logistics & Corporate Communications Professional</p>
+                    <p class="bio">Strategic operator and business professional with rigorous multi-industry exposure across corporate communications, logistics management, commercial operations, and market research.</p>
                 </div>
             </div>
             <div class="contact-links">
-                <a href="mailto:vaibhavsharma.work@outlook.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:vaibhavsharma.work@outlook.com" class="btn btn-primary"><i class="fas fa-envelope"></i> vaibhavsharma.work@outlook.com</a>
+                <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
             </div>
         </header>
 
-        <!-- Professional Experience Section -->
+        <!-- Professional Experience & Case Studies Section -->
         <section>
             <h2><i class="fas fa-briefcase"></i> Professional Experience & Case Studies</h2>
             <div class="grid">
                 <div class="card">
                     <h3>Dabur India</h3>
                     <div class="subtitle">Communications & Consumer Engagement</div>
-                    <p>Executed PR communications and public relations frameworks, optimizing stakeholder outreach and brand engagement campaigns.</p>
+                    <p>Executed PR communications and stakeholder outreach frameworks to optimize brand engagement campaigns and public relations output.</p>
                     <div class="tags">
                         <span class="tag">PR & Communications</span>
                         <span class="tag">Stakeholder Outreach</span>
@@ -276,7 +279,7 @@
                 <div class="card">
                     <h3>HCL Foundation</h3>
                     <div class="subtitle">Sports Operations & Logistics Management</div>
-                    <p>Coordinated multi-functional tournament operations, multi-state travel verification databases, sports kit inventory distribution, and facility event resource planning.</p>
+                    <p>Coordinated multi-functional tournament operations, multi-state travel verification databases, sports kit inventory distribution, and event resource planning.</p>
                     <div class="tags">
                         <span class="tag">Operations</span>
                         <span class="tag">Logistics</span>
