@@ -1,360 +1,819 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaibhav Sharma | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Vaibhav Sharma | Brand Marketing & Strategy Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slateBackground: '#f8fafc',
+                        charcoal: {
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        },
+                        brandTeal: {
+                            DEFAULT: '#00897b',
+                            light: '#00a896',
+                            soft: '#e0f2f1',
+                            border: '#b2dfdb'
+                        },
+                        brandCyan: {
+                            DEFAULT: '#0ea5e9',
+                            soft: '#e0f2fe'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --border: #334155;
-            --tag-bg: rgba(59, 130, 246, 0.1);
-            --tag-text: #60a5fa;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-            --transition: all 0.2s ease-in-out;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2.5rem 1rem;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
         }
 
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
+        .glass-header {
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        header {
-            background: var(--bg-card);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .gradient-text {
+            background: linear-gradient(135deg, #00897b 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .profile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+        .card-hover {
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .profile-info h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-
-        .profile-info p.title {
-            font-size: 1.2rem;
-            color: var(--tag-text);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .profile-info p.bio {
-            font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 700px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.4rem;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border-color: var(--border);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--border);
-        }
-
-        section {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            border: 1px solid var(--border);
-        }
-
-        h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-main);
-        }
-
-        h2 i {
-            color: var(--accent);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border);
-            padding: 1.8rem;
-            border-radius: 14px;
-            transition: var(--transition);
-        }
-
-        .card:hover {
+        .card-hover:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            color: var(--text-main);
-        }
-
-        .card .subtitle {
-            font-size: 0.85rem;
-            color: var(--tag-text);
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background-color: var(--tag-bg);
-            color: var(--tag-text);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        ul.list {
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        ul.list li {
-            position: relative;
-            padding-left: 1.8rem;
-            font-size: 1rem;
-            color: var(--text-muted);
-        }
-
-        ul.list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem 0.5rem;
-            }
-            header, section {
-                padding: 1.8rem;
-            }
-            .profile-info h1 {
-                font-size: 2rem;
-            }
+            box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
         }
     </style>
 </head>
-<body>
 
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="profile-header">
-                <div class="profile-info">
-                    <h1>Vaibhav Sharma</h1>
-                    <p class="title">MBA Aspirant | Operations, Logistics & Corporate Communications Professional</p>
-                    <p class="bio">Strategic operator and business professional with rigorous multi-industry exposure across corporate communications, logistics management, commercial operations, and market research.</p>
+<body class="bg-slateBackground text-charcoal-900 antialiased selection:bg-brandTeal-soft selection:text-brandTeal">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand Logo / Name -->
+                <a href="#hero" class="text-xl sm:text-2xl font-bold tracking-tight text-charcoal-900">
+                    Vaibhav<span class="text-brandCyan">.Sharma</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#about" class="hover:text-brandTeal transition-colors">About</a>
+                    <a href="#case-studies" class="hover:text-brandTeal transition-colors">On The Desk</a>
+                    <a href="#competencies" class="hover:text-brandTeal transition-colors">Competencies</a>
+                    <a href="#beyond-the-desk" class="hover:text-brandTeal transition-colors">Beyond The Desk</a>
+                    <a href="#resources" class="hover:text-brandTeal transition-colors">Resource Hub</a>
+                    <a href="#contact" class="hover:text-brandTeal transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions: CTA -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-brandTeal hover:bg-brandTeal-light transition-all shadow-md shadow-brandTeal/20">
+                        Get In Touch
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu"
+                        class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
-            <div class="contact-links">
-                <a href="mailto:vaibhavsharma.work@outlook.com" class="btn btn-primary"><i class="fas fa-envelope"></i> vaibhavsharma.work@outlook.com</a>
-                <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-            </div>
-        </header>
+        </div>
 
-        <!-- Professional Experience & Case Studies Section -->
-        <section>
-            <h2><i class="fas fa-briefcase"></i> Professional Experience & Case Studies</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Dabur India</h3>
-                    <div class="subtitle">Communications & Consumer Engagement</div>
-                    <p>Executed PR communications and stakeholder outreach frameworks to optimize brand engagement campaigns and public relations output.</p>
-                    <div class="tags">
-                        <span class="tag">PR & Communications</span>
-                        <span class="tag">Stakeholder Outreach</span>
-                    </div>
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu"
+            class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 font-medium text-slate-700">
+            <a href="#about" class="block py-2 hover:text-brandTeal transition-colors mobile-link">About</a>
+            <a href="#case-studies" class="block py-2 hover:text-brandTeal transition-colors mobile-link">On The Desk
+                (Case Studies)</a>
+            <a href="#competencies"
+                class="block py-2 hover:text-brandTeal transition-colors mobile-link">Competencies</a>
+            <a href="#beyond-the-desk" class="block py-2 hover:text-brandTeal transition-colors mobile-link">Beyond The
+                Desk</a>
+            <a href="#resources" class="block py-2 hover:text-brandTeal transition-colors mobile-link">Resource Hub</a>
+            <a href="#contact" class="block py-2 hover:text-brandTeal transition-colors mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero"
+        class="pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+            <div class="lg:col-span-12 space-y-6">
+                <!-- Status Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-brandTeal-soft text-brandTeal border border-brandTeal-border">
+                    <span class="w-2 h-2 rounded-full bg-brandTeal animate-pulse"></span>
+                    Available for Brand Management & Marketing Strategy Roles
                 </div>
 
-                <div class="card">
-                    <h3>HCL Foundation</h3>
-                    <div class="subtitle">Sports Operations & Logistics Management</div>
-                    <p>Coordinated multi-functional tournament operations, multi-state travel verification databases, sports kit inventory distribution, and event resource planning.</p>
-                    <div class="tags">
-                        <span class="tag">Operations</span>
-                        <span class="tag">Logistics</span>
-                        <span class="tag">Event Management</span>
-                    </div>
+                <!-- Main Heading -->
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-charcoal-900">
+                    Hi, I'm <span class="text-brandCyan">Vaibhav Sharma</span>
+                </h1>
+
+                <!-- Subheading / Title -->
+                <p class="text-xl sm:text-2xl font-bold text-charcoal-800">
+                    Crafting narratives where data meets brand destiny.
+                </p>
+
+                <!-- Professional Summary Bio -->
+                <p id="about" class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl">
+                    Bachelor of Management Studies (BMS) graduate from Shiv Nadar Institution of Eminence. Experienced
+                    across brand strategy, consumer insights, quantitative market research, corporate PR, CSR
+                    operations, and commercial execution. Combining analytical rigor with creative execution.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#case-studies"
+                        class="px-6 py-3 rounded-xl font-semibold text-white bg-brandTeal hover:bg-brandTeal-light transition-all shadow-md shadow-brandTeal/20 flex items-center gap-2">
+                        <span>Explore Case Studies</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <a href="#beyond-the-desk"
+                        class="px-6 py-3 rounded-xl font-semibold text-slate-700 bg-white hover:bg-slate-100 transition-all flex items-center gap-2 border border-slate-200 shadow-sm">
+                        <i class="fas fa-running text-brandTeal"></i>
+                        <span>Beyond The Desk</span>
+                    </a>
                 </div>
 
-                <div class="card">
-                    <h3>ADM Java</h3>
-                    <div class="subtitle">Automotive RFP Tracking & Commercial Operations</div>
-                    <p>Built PPC production planning reports, managed commercial RFPs, and coordinated industrial expo presentations for industrial automotive scaling.</p>
-                    <div class="tags">
-                        <span class="tag">Commercial Operations</span>
-                        <span class="tag">PPC Reporting</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Vishal Mega Mart</h3>
-                    <div class="subtitle">Organoleptic Survey & Audit</div>
-                    <p>Conducted extensive consumer perception audits and organoleptic testing across 12-spice product variants to benchmark retail quality.</p>
-                    <div class="tags">
-                        <span class="tag">Retail Audit</span>
-                        <span class="tag">Consumer Research</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Manforce Condom Retail Perception Study</h3>
-                    <div class="subtitle">Market Research & Channel Analysis</div>
-                    <p>Executed targeted retail channel observations and quantitative shopper perception surveys to assess trade placement and consumer uptake.</p>
-                    <div class="tags">
-                        <span class="tag">Market Study</span>
-                        <span class="tag">Channel Insights</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Beyond the Desk / Athletic Footprint Section -->
-        <section>
-            <h2><i class="fas fa-running"></i> Beyond the Desk & Athletic Footprint</h2>
-            <ul class="list">
-                <li><strong>International Youth Football:</strong> Competed internationally at elite youth tournaments including the Gothia Cup and Helsinki Cup, demonstrating elite athletic resilience and team leadership under high pressure.</li>
-                <li><strong>State & National Football Leadership:</strong> Served as team captain and selection leader across competitive state and national level football tournaments.</li>
-                <li><strong>Martial Arts & Badminton:</strong> Maintained rigorous multidisciplinary fitness discipline through competitive martial arts training and regional badminton competitions.</li>
-            </ul>
-        </section>
-
-        <!-- Resource Hub Section -->
-        <section>
-            <h2><i class="fas fa-folder-open"></i> Resource Hub</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Dabur PR Portfolio</h3>
-                    <p>Comprehensive public relations reports, press features, and communication asset archives.</p>
-                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download PDF</a>
-                </div>
-                <div class="card">
-                    <h3>HCL Sports Operations Deck</h3>
-                    <p>Tournament logistics workflows, multi-state athlete travel tracking matrices, and event resource plans.</p>
-                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download PDF</a>
-                </div>
-                <div class="card">
-                    <h3>Unity of Command Dataset</h3>
-                    <p>Centralized operational structuring matrix and coordination blueprints.</p>
-                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download Dataset</a>
+                <!-- Social Links -->
+                <div class="flex items-center gap-4 pt-2 text-slate-500">
+                    <span class="text-xs uppercase font-bold tracking-wider text-slate-400">Connect:</span>
+                    <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" rel="noopener"
+                        class="p-2.5 rounded-xl bg-white border border-slate-200 hover:text-brandTeal hover:border-brandTeal-border transition-all shadow-sm"
+                        title="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="mailto:vaibhavsharma.work@outlook.com"
+                        class="p-2.5 rounded-xl bg-white border border-slate-200 hover:text-brandTeal hover:border-brandTeal-border transition-all shadow-sm"
+                        title="Send Email">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <footer>
-            <p>&copy; 2026 Vaibhav Sharma. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
 
+        <!-- VALUE ADDITION METRICS BAR -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brandTeal">200+</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-700">Underprivileged Athletes Managed</div>
+                <div class="text-xs text-slate-400">HCL Foundation CSR</div>
+            </div>
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brandCyan">15+</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-700">National Press Releases Authored</div>
+                <div class="text-xs text-slate-400">Dabur India Limited</div>
+            </div>
+            <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-brandTeal">60+</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-700">Critical Consumer Complaints Handled</div>
+                <div class="text-xs text-slate-400">Dabur PR & Grievance Portal</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ON THE DESK: VALUE-ADDITION CASE STUDIES SECTION -->
+    <section id="case-studies" class="py-20 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16 space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brandTeal">On The Desk</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-charcoal-900">Featured Work & Internship Case Studies
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Structured around a three-stage Value Addition Model: transforming primary data insights into
+                    quantitative models, operational execution, and strategic communication.
+                </p>
+            </div>
+
+            <!-- Permanently Open Work Experience Case Studies -->
+            <div class="space-y-8">
+
+                <!-- Case 1: Dabur India Corporate Comms -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-slateBackground shadow-sm space-y-6">
+                    <div class="space-y-2 border-b border-slate-200/80 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-bold bg-brandCyan-soft text-brandCyan">Corporate
+                                Comms & Engagement</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-200 text-slate-700">Dabur
+                                India Limited</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-charcoal-900">Corporate Communications & Consumer
+                            Engagement</h3>
+                        <p class="text-sm text-slate-600">Managing nationwide consumer grievance tracking systems, CSAT
+                            analysis, and publishing media press collateral.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-shield-alt mr-1.5"></i>Escalation Tracking</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">60+ Critical Complaints Handled</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Maintained root-cause logging spreadsheets
+                                for food safety & quality inquiries, coordinating swift issue resolutions.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandTeal"><i
+                                    class="fas fa-newspaper mr-1.5"></i>Media Publishing</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">15+ Authored Press Releases</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Drafted and issued official press releases
+                                across leading national dailies and online business journals.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-users-rectangle mr-1.5"></i>Event Coordination</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Corporate Events & Summits</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Executed logistics for supplier meets,
+                                beauty brand launches, and executive town hall communications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: HCL Foundation Sports Operations -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-slateBackground shadow-sm space-y-6">
+                    <div class="space-y-2 border-b border-slate-200/80 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-md text-xs font-bold bg-brandTeal-soft text-brandTeal">CSR &
+                                Sports Operations</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-200 text-slate-700">HCL
+                                Foundation (Sports for Change)</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-charcoal-900">Sports Operations & Logistics
+                            Management</h3>
+                        <p class="text-sm text-slate-600">End-to-end tournament execution, volunteer team leadership,
+                            multi-state athlete scheduling, and resource planning across national finals.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-users-gear mr-1.5"></i>Leadership & Database</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Volunteer Lead & Travel Verification</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Led multi-functional volunteer teams
+                                across two national tournaments (SFC North Zone & National Finals, 400+ teams, 200+
+                                participants). Built central travel databases verifying train bookings for 400+ athletes
+                                from 9 states, tracking planned vs actual metrics.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandTeal"><i
+                                    class="fas fa-boxes-packing mr-1.5"></i>Inventory Control</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Sports Kit & Apparel Distribution</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Managed end-to-end distribution of sports
+                                kits and equipment for athletes and coaches; created structured inventory databases
+                                tracking clothing apparel, footwear, and equipment stock across venues.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-map-location-dot mr-1.5"></i>Resource Planning</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Pre-Event Projection & Review</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Projected pre-event resource needs
+                                (branding, venue signage, chief guest protocols, and backup turfs); documented
+                                post-event observational insights to streamline future tournament execution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: ADM Java -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-slateBackground shadow-sm space-y-6">
+                    <div class="space-y-2 border-b border-slate-200/80 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-bold bg-brandTeal-soft text-brandTeal">Commercial
+                                Operations</span>
+                            <span class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-200 text-slate-700">ADM
+                                Java (Greater Noida)</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-charcoal-900">Automotive RFP Tracking & Commercial
+                            Operations</h3>
+                        <p class="text-sm text-slate-600">Representing ADM Java at industrial expos, generating custom
+                            presentations, visual collateral, and PPC production planning control reports.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-eye mr-1.5"></i>Expo Representation</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Expos, Visuals & Presentation Decks</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Represented ADM Java at industrial expos,
+                                generating custom presentation decks, visual banners, and stakeholder engagement
+                                displays.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandTeal"><i
+                                    class="fas fa-chart-pie mr-1.5"></i>Production Control</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">PPC Reports Generation</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Generated Production Planning & Control
+                                (PPC) reports for management tracking plant targets, operational efficiency, and
+                                resource allocation.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-tasks mr-1.5"></i>Client Coordination</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">RFP Pipeline Management</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Tracked automotive part proposals and
+                                coordinated schedules across commercial and plant production teams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 4: Qualisys / Vishal Mega Mart -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-slateBackground shadow-sm space-y-6">
+                    <div class="space-y-2 border-b border-slate-200/80 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-md text-xs font-bold bg-brandTeal-soft text-brandTeal">FMCG
+                                Product Launch</span>
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-200 text-slate-700">Qualisys
+                                Research & Consulting</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-charcoal-900">Vishal Mega Mart Blended Spices
+                            Launch & Organoleptic Audit</h3>
+                        <p class="text-sm text-slate-600">Translating direct consumer taste testing across 12 spice
+                            variants into structured pricing, packaging, and commercial launch strategies.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-poll-h mr-1.5"></i>Google Surveys & Taste Testing</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">12 Spice Variants Audit</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Executed organoleptic surveys across
+                                Google Surveys & Taste Testing. Designed structured organoleptic surveys evaluating
+                                taste, aroma, granularity, and visual packaging appeal across consumer cohorts.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandTeal"><i
+                                    class="fas fa-table mr-1.5"></i>Data Structuring</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Excel Scoring & Crosstabs</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Cleaned raw feedback datasets into
+                                structured crosstabs, sensory scoring matrices, and competitor price elasticity
+                                benchmarks across all 12 spice variants.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-presentation-screen mr-1.5"></i>Strategic Action</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Executive Launch Decks</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Synthesized findings into brand
+                                positioning decks for executive stakeholders, directly shaping regional spice launch
+                                variants and retail pricing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 5: Qualisys / Manforce Condoms -->
+                <div class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-slateBackground shadow-sm space-y-6">
+                    <div class="space-y-2 border-b border-slate-200/80 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-md text-xs font-bold bg-brandCyan-soft text-brandCyan">Market
+                                Research & Retail Audits</span>
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-200 text-slate-700">Qualisys
+                                / Manforce Research Study</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-charcoal-900">Manforce Condom Retail & Packaging
+                            Perception Study</h3>
+                        <p class="text-sm text-slate-600">Qualitative chemist observation studies, pharmacy display
+                            dynamics, and consumer purchase behavioral mapping across retail channels.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-store mr-1.5"></i>Field Observations</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Retailer & Pharmacy Audits</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Mapped counter purchase dynamics, shelf
+                                display visibility, and chemist-recommended brand interactions across retail pharmacies.
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandTeal"><i
+                                    class="fas fa-comments mr-1.5"></i>Depth Interviews</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Consumer Observation Matrices</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Analyzed qualitative feedback matrices
+                                across diverse cohorts (active users, lapsers, 45+ age bracket, and retail pharmacy
+                                owners).</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brandCyan"><i
+                                    class="fas fa-box mr-1.5"></i>Packaging Strategy</div>
+                            <h4 class="font-bold text-sm text-charcoal-900">Shelf Placement Optimization</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Converted observational tables into
+                                actionable recommendations for front-of-counter packaging visibility and variant
+                                placement strategies.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE COMPETENCIES / SKILL MATRIX -->
+    <section id="competencies" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-brandTeal">Skill Matrix</h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-charcoal-900">Core Competencies & Capabilities</p>
+            <p class="text-slate-600">Combining analytical rigor with creative communication strategies.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandTeal-soft text-brandTeal flex items-center justify-center text-xl">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Brand Strategy & Communications</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> End-to-end
+                        campaign positioning & messaging.</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> Multi-channel
+                        corporate PR & press release drafting.</li>
+                </ul>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandCyan-soft text-brandCyan flex items-center justify-center text-xl">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Market Research & Analytics</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> Qualitative &
+                        quantitative survey design (Google Forms).</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> Organoleptic
+                        taste testing & FMCG pricing crosstabs.</li>
+                </ul>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandTeal-soft text-brandTeal flex items-center justify-center text-xl">
+                    <i class="fas fa-truck-ramp-box"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Commercial Operations & Vendor Management</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> Automotive RFP
+                        tracking & pipeline execution.</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> Industrial
+                        expo visual decks & PPC reports generation.</li>
+                </ul>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandCyan-soft text-brandCyan flex items-center justify-center text-xl">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Corporate Engagement & Grievances</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> 60+ critical
+                        consumer complaint tracking & mitigation.</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> Reputation
+                        management during product inquiries.</li>
+                </ul>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandTeal-soft text-brandTeal flex items-center justify-center text-xl">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Sports & CSR Operations</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> Logistics for
+                        200+ athletes across national tournaments.</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandTeal mt-0.5"></i> Tournament
+                        scheduling, budgeting & venue direction.</li>
+                </ul>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-brandCyan-soft text-brandCyan flex items-center justify-center text-xl">
+                    <i class="fas fa-users-viewfinder"></i>
+                </div>
+                <h3 class="text-lg font-bold text-charcoal-900">Cross-Functional Leadership</h3>
+                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> Team
+                        leadership across multi-state field operations.</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-brandCyan mt-0.5"></i> Strategic
+                        alignment between executive & plant teams.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BEYOND THE DESK / ATHLETIC FOOTPRINT SECTION -->
+    <section id="beyond-the-desk" class="py-20 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12 space-y-3">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brandTeal">Leadership & Discipline</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-charcoal-900">Beyond The Desk & Athletic Footprint
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    High-performance athletic achievements translating elite focus, strategic leadership under pressure,
+                    and mental toughness directly into corporate environments.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="p-6 sm:p-8 rounded-3xl bg-slateBackground border border-slate-200 space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-brandTeal-soft text-brandTeal flex items-center justify-center font-bold">
+                        <i class="fas fa-globe-americas text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">International Youth Football</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Competed internationally at world-renowned elite youth tournaments including the Gothia Cup
+                        (Sweden) and Helsinki Cup (Finland), demonstrating international cultural adaptiveness, athletic
+                        resilience, and team unity.
+                    </p>
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl bg-slateBackground border border-slate-200 space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-brandCyan-soft text-brandCyan flex items-center justify-center font-bold">
+                        <i class="fas fa-award text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">State & National Captaincy</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Served as team captain and strategic field leader across competitive state and national level
+                        football tournaments, spearheading tactics, team communication, and squad morale under high
+                        pressure.
+                    </p>
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl bg-slateBackground border border-slate-200 space-y-3">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-brandTeal-soft text-brandTeal flex items-center justify-center font-bold">
+                        <i class="fas fa-user-ninja text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Martial Arts & Badminton</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Maintained rigorous personal discipline and focus through competitive martial arts training and
+                        regional badminton competitions, building agility, tactical decision-making, and perseverance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESOURCE HUB SECTION -->
+    <section id="resources" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-brandTeal">Downloads & Evidence</h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-charcoal-900">Resource Hub & Document Vault</p>
+            <p class="text-slate-600 leading-relaxed">
+                Access official project documentation, internship reports, dataset summaries, and academic
+                certifications directly.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Resource Item 1: Dabur PR -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-red-50 text-red-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-pdf text-sm"></i> PDF Report
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Dabur PR Press Release Portfolio</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Compilation of authored press releases, media coverage trackers, and official communications
+                        released during Dabur India Limited tenure.
+                    </p>
+                </div>
+                <a href="Dabur_PR_Press_Release_Portfolio.pdf" download="Dabur_PR_Press_Release_Portfolio.pdf"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download PDF</span>
+                </a>
+            </div>
+
+            <!-- Resource Item 2: HCL Foundation -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-red-50 text-red-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-pdf text-sm"></i> PDF Report
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Social Sector Internship Report (HCLF)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Detailed operations and logistics review document covering the Sports for Change program and
+                        multi-state tournament executions.
+                    </p>
+                </div>
+                <a href="Social_Sector_Internship_Report_HCLF.pdf" download="Social_Sector_Internship_Report_HCLF.pdf"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download PDF</span>
+                </a>
+            </div>
+
+            <!-- Resource Item 3: Manforce Market Study -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-excel text-sm"></i> Excel Dataset
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Manforce Condoms Market Study Summary</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Quantitative and qualitative observations dataset evaluating retailer dynamics, pharmacy
+                        placement, and consumer purchasing behavior.
+                    </p>
+                </div>
+                <a href="Manforce_Condoms_Market_Study_Summary.xlsx"
+                    download="Manforce_Condoms_Market_Study_Summary.xlsx"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download Dataset</span>
+                </a>
+            </div>
+
+            <!-- Resource Item 4: Qualisys 12 Spice Organoleptic Audit -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-excel text-sm"></i> Excel Dataset
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Qualisys 12 Spice Organoleptic Audit</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Sensory evaluation Crosstab matrices and product taste audit data across 12 spice variants
+                        conducted for Vishal Mega Mart.
+                    </p>
+                </div>
+                <a href="Qualisys_12_Spice_Organoleptic_Audit.xlsx" download="Qualisys_12_Spice_Organoleptic_Audit.xlsx"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download Dataset</span>
+                </a>
+            </div>
+
+            <!-- Resource Item 5: Unity of Command Survey -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-excel text-sm"></i> Excel Dataset
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">Unity of Command Survey Responses</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Primary research database and organizational feedback responses analyzing operational command
+                        alignment and hierarchy.
+                    </p>
+                </div>
+                <a href="Unity_of_Command_Survey_Responses.xlsx" download="Unity_of_Command_Survey_Responses.xlsx"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download Dataset</span>
+                </a>
+            </div>
+
+            <!-- Resource Item 6: NPTEL Marketing Management IITK -->
+            <div
+                class="p-6 rounded-3xl bg-white border border-slate-200 card-hover shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="p-2.5 rounded-2xl bg-red-50 text-red-600 font-bold text-xs flex items-center gap-2">
+                            <i class="fas fa-file-pdf text-sm"></i> PDF Certification
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium">1 KB</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal-900">NPTEL Marketing Management (IIT Kanpur)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Official certification document for Advanced Marketing Management course completed under IIT
+                        Kanpur curriculum.
+                    </p>
+                </div>
+                <a href="NPTEL_Marketing_Management_IITK.pdf" download="NPTEL_Marketing_Management_IITK.pdf"
+                    class="w-full py-3 px-4 rounded-xl text-xs font-semibold text-charcoal-900 bg-slate-100 hover:bg-brandTeal hover:text-white transition-all flex items-center justify-center gap-2 group">
+                    <i class="fas fa-download text-slate-500 group-hover:text-white transition-colors"></i>
+                    <span>Download PDF</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION & FOOTER -->
+    <footer id="contact" class="bg-charcoal-900 text-white pt-20 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's Connect & Collaborate</h2>
+                    <p class="text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
+                        Currently exploring strategic roles in Brand Management, Commercial Operations, Marketing
+                        Strategy, and Product Growth.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
+                    <a href="mailto:vaibhavsharma.work@outlook.com"
+                        class="px-6 py-3.5 rounded-xl font-semibold text-white bg-brandTeal hover:bg-brandTeal-light transition-all flex items-center justify-center gap-2 shadow-lg shadow-brandTeal/20">
+                        <i class="fas fa-envelope"></i>
+                        <span>vaibhavsharma.work@outlook.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" rel="noopener"
+                        class="px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i class="fab fa-linkedin-in text-brandCyan"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Vaibhav Sharma. All rights reserved.</p>
+                <p class="flex items-center gap-2">
+                    <span>Designed for Brand Marketing & Strategy</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION & MOBILE NAVIGATION JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                // Toggle mobile navigation drawer
+                mobileMenuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Auto-close menu when clicking link
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
