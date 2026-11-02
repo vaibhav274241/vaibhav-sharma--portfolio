@@ -41,4 +41,317 @@
         }
 
         header {
-            background
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .profile-info h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-info p.title {
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .profile-info p.bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--border);
+        }
+
+        section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        h2 i {
+            color: var(--accent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        ul.list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        ul.list li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        ul.list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            header, section {
+                padding: 1.5rem;
+            }
+            .profile-info h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="profile-header">
+                <div class="profile-info">
+                    <h1>Vaibhav Sharma</h1>
+                    <p class="title">MBA Aspirant | Operations & Corporate Communications Professional</p>
+                    <p class="bio">Passionate business strategist with extensive internship experience across supply chain logistics, public relations, commercial operations, and market research.</p>
+                </div>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:vaibhavsharma.work@outlook.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://www.linkedin.com/in/vaibhav-sharma-364891213" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- Professional Experience Section -->
+        <section>
+            <h2><i class="fas fa-briefcase"></i> Professional Experience & Case Studies</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Dabur India</h3>
+                    <div class="subtitle">Communications & Consumer Engagement</div>
+                    <p>Executed PR communications and public relations frameworks, optimizing stakeholder outreach and brand engagement campaigns.</p>
+                    <div class="tags">
+                        <span class="tag">PR & Communications</span>
+                        <span class="tag">Stakeholder Outreach</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>HCL Foundation</h3>
+                    <div class="subtitle">Sports Operations & Logistics Management</div>
+                    <p>Coordinated multi-functional tournament operations, multi-state travel verification databases, sports kit inventory distribution, and facility event resource planning.</p>
+                    <div class="tags">
+                        <span class="tag">Operations</span>
+                        <span class="tag">Logistics</span>
+                        <span class="tag">Event Management</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>ADM Java</h3>
+                    <div class="subtitle">Automotive RFP Tracking & Commercial Operations</div>
+                    <p>Built PPC production planning reports, managed commercial RFPs, and coordinated industrial expo presentations for industrial automotive scaling.</p>
+                    <div class="tags">
+                        <span class="tag">Commercial Operations</span>
+                        <span class="tag">PPC Reporting</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Vishal Mega Mart</h3>
+                    <div class="subtitle">Organoleptic Survey & Audit</div>
+                    <p>Conducted extensive consumer perception audits and organoleptic testing across 12-spice product variants to benchmark retail quality.</p>
+                    <div class="tags">
+                        <span class="tag">Retail Audit</span>
+                        <span class="tag">Consumer Research</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Manforce Condom Retail Perception Study</h3>
+                    <div class="subtitle">Market Research & Channel Analysis</div>
+                    <p>Executed targeted retail channel observations and quantitative shopper perception surveys to assess trade placement and consumer uptake.</p>
+                    <div class="tags">
+                        <span class="tag">Market Study</span>
+                        <span class="tag">Channel Insights</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beyond the Desk / Athletic Footprint Section -->
+        <section>
+            <h2><i class="fas fa-running"></i> Beyond the Desk & Athletic Footprint</h2>
+            <ul class="list">
+                <li><strong>International Youth Football:</strong> Competed internationally at elite youth tournaments including the Gothia Cup and Helsinki Cup, demonstrating elite athletic resilience and team leadership under high pressure.</li>
+                <li><strong>State & National Football Leadership:</strong> Served as team captain and selection leader across competitive state and national level football tournaments.</li>
+                <li><strong>Martial Arts & Badminton:</strong> Maintained rigorous multidisciplinary fitness discipline through competitive martial arts training and regional badminton competitions.</li>
+            </ul>
+        </section>
+
+        <!-- Resource Hub Section -->
+        <section>
+            <h2><i class="fas fa-folder-open"></i> Resource Hub</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Dabur PR Portfolio</h3>
+                    <p>Comprehensive public relations reports, press features, and communication asset archives.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+                <div class="card">
+                    <h3>HCL Sports Operations Deck</h3>
+                    <p>Tournament logistics workflows, multi-state athlete travel tracking matrices, and event resource plans.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+                <div class="card">
+                    <h3>Unity of Command Dataset</h3>
+                    <p>Centralized operational structuring matrix and coordination blueprints.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;"><i class="fas fa-download"></i> Download Dataset</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Vaibhav Sharma. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
